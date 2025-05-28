@@ -1,0 +1,268 @@
+/* Love-themed styles for MatchMaker App */
+body {
+    background-color: #FFC1CC; /* Baby pink background */
+    font-family: 'Dancing Script', cursive, 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: #FFF5F7; /* Soft white-pink */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #FF69B4; /* Hot pink */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.5);
+    animation: pulse 2s infinite;
+}
+
+p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #C71585; /* Medium violet red */
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FF69B4;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #FFF0F5; /* Lavender blush */
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #DC143C; /* Crimson */
+}
+
+button, .btn {
+    background-color: #FF69B4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+}
+
+button:hover, .btn:hover {
+    background-color: #DC143C;
+    transform: scale(1.05);
+}
+
+.link {
+    color: #C71585;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.match-card {
+    background-color: #FFF0F5;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+    transition: transform 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+}
+
+.chat-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 2px solid #FF69B4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #FFF5F7;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.sent {
+    background-color: #FF69B4;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #FFF0F5;
+    color: #333;
+    margin-right: auto;
+    text-align: left;
+}
+
+.message .timestamp {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 2px solid #FF69B4;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #FF69B4;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #FFF0F5;
+}
+
+/* Heart Animation */
+.heart-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FF1493; /* Deep pink */
+    transform: rotate(-45deg);
+    animation: float 3s ease-in-out forwards;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #FF1493;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(-45deg) scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-100px) rotate(-45deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) rotate(-45deg) scale(1.5);
+    }
+}
+
+/* New Styles for index.html */
+.love-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.quote-container {
+    background-color: #FFF0F5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+    animation: fadeIn 1s ease-in;
+}
+
+.quote {
+    color: #C71585;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

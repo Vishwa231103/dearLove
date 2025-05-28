@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MatchMaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="heart-animation">
+        <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="heart" style="left: 50%; animation-delay: 0.3s;"></div>
+        <div class="heart" style="left: 80%; animation-delay: 0.6s;"></div>
+    </div>
+    <div class="container">
+        <h1>{{ user.name }}'s Profile</h1>
+        <div>
+            <p><span style="font-weight: bold;">Gender:</span> {{ user.gender }}</p>
+            <p><span style="font-weight: bold;">Hobbies:</span> {{ user.hobbies }}</p>
+            <p><span style="font-weight: bold;">Tastes:</span> {{ user.tastes }}</p>
+            <p><span style="font-weight: bold;">Nature/Personality:</span> {{ user.nature }}</p>
+        </div>
+        <div>
+            <a href="{{ url_for('chat', recipient_id=user.id) }}" class="btn" style="background-color: #32CD32;">Start Chat</a>
+        </div>
+        <p>
+            <a href="{{ url_for('matches') }}" class="link">Back to Matches</a> | 
+            <a href="{{ url_for('logout') }}" class="link">Logout</a>
+        </p>
+    </div>
+</body>
+</html>

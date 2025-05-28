@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DearLove App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="floating-hearts">
+        <div class="floating-heart" style="left: 15%; animation-delay: 0s; width: 40px; height: 40px; background-color: var(--deep-pink); transform: rotate(-45deg);">
+            <div style="content: ''; width: 40px; height: 40px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; top: -20px; left: 0;"></div>
+            <div style="content: ''; width: 40px; height: 40px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; left: 20px; top: 0;"></div>
+        </div>
+        <div class="floating-heart" style="left: 35%; animation-delay: 3s; width: 30px; height: 30px; background-color: var(--deep-pink); transform: rotate(-45deg);">
+            <div style="content: ''; width: 30px; height: 30px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; top: -15px; left: 0;"></div>
+            <div style="content: ''; width: 30px; height: 30px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; left: 15px; top: 0;"></div>
+        </div>
+        <div class="floating-heart" style="left: 55%; animation-delay: 6s; width: 50px; height: 50px; background-color: var(--deep-pink); transform: rotate(-45deg);">
+            <div style="content: ''; width: 50px; height: 50px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; top: -25px; left: 0;"></div>
+            <div style="content: ''; width: 50px; height: 50px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; left: 25px; top: 0;"></div>
+        </div>
+        <div class="floating-heart" style="left: 75%; animation-delay: 9s; width: 35px; height: 35px; background-color: var(--deep-pink); transform: rotate(-45deg);">
+            <div style="content: ''; width: 35px; height: 35px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; top: -17.5px; left: 0;"></div>
+            <div style="content: ''; width: 35px; height: 35px; background-color: var(--deep-pink); border-radius: 50%; position: absolute; left: 17.5px; top: 0;"></div>
+        </div>
+    </div>
+    <div class="heart-animation">
+        <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="heart" style="left: 30%; animation-delay: 0.2s;"></div>
+        <div class="heart" style="left: 50%; animation-delay: 0.4s;"></div>
+        <div class="heart" style="left: 70%; animation-delay: 0.6s;"></div>
+        <div class="heart" style="left: 90%; animation-delay: 0.8s;"></div>
+    </div>
+    <div class="container">
+        <h1>Welcome to DearLove</h1>
+        <p>Find your perfect match based on tastes, hobbies, and more!</p>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('matches') }}" class="btn">View Matches</a>
+            <a href="{{ url_for('logout') }}" class="btn" style="background-color: var(--dark-pink);">Logout</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+            <a href="{{ url_for('login') }}" class="btn" style="background-color: #4169E1;">Login</a>
+        {% endif %}
+    </div>
+    <p><h1>find your choice and love here</h1></p>
+    <p><h2>built by P.vishwaTeja & P.swati</h2></p>
+    <p>caution</p>
+    <marquee><h3>please remember the login & registration credentials,bcoz if once its gone then all will gone</h3></marquee>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Matches - MatchMaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="heart-animation">
+        <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="heart" style="left: 50%; animation-delay: 0.3s;"></div>
+        <div class="heart" style="left: 80%; animation-delay: 0.6s;"></div>
+    </div>
+    <div class="container">
+        <h1>Your Matches, {{ current_user.name }}</h1>
+        {% if matches %}
+            <div class="matches-grid">
+                {% for match in matches %}
+                    <div class="match-card">
+                        <h2>{{ match.name }}</h2>
+                        <p>Gender: {{ match.gender }}</p>
+                        <p>Compatibility: {{ match.compatibility }}%</p>
+                        <a href="{{ url_for('profile', user_id=match.id) }}" class="btn">View Profile</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No matches found. Try registering more users!</p>
+        {% endif %}
+        <p>
+            <a href="{{ url_for('register') }}" class="link">Register Another Profile</a> | 
+            <a href="{{ url_for('logout') }}" class="link">Logout</a>
+        </p>
+    </div>
+</body>
+</html>
